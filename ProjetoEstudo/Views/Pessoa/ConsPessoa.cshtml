@@ -1,0 +1,23 @@
+﻿@using ProjetoEstudo.Models
+@model IEnumerable<Pessoa> 
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+   <text align="center"> 
+    <h2>Relação de pessoas </h2>
+   </text>
+<br>
+
+@foreach (var pessoa in Model)
+ {
+    
+<p>
+    <hr>
+   <b>Nome:</b> @pessoa.Nome @pessoa.Sobrenome <br>
+   <b>Data de Nascimento:</b> @pessoa.DataNasc<br>
+</p>
+    
+ }
+ 

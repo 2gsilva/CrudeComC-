@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vNt3JAszUQbdm235Uzqk7LEssc/5y5YDgpNlMGWeD2OqXk/NcxzYaKQSSsuVjyrYOATOHla4xrgFHAcsrwdfNQ==",
+  "dgSpecHash": "0aPQkdfYNyt6WEXQZN9QoYRrq0DEGpJACViRp2ErOWL4eH7SGD0w/JsSflhM8MbRaOeNqNwll2OQtPjZTV6wXQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Guilherme\\source\\repos\\ProjetoEstudo\\ProjetoEstudo\\ProjetoEstudo.csproj",
+  "projectFilePath": "C:\\SistemasGitHub\\CrudeComCSharp\\ProjetoEstudo\\ProjetoEstudo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Guilherme\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Guilherme\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",

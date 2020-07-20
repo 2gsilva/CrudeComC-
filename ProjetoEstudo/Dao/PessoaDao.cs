@@ -16,11 +16,17 @@ namespace ProjetoEstudo.Dao
 			_context = context;
 		}
 
-		public void incluir(Pessoa pessoa)
+		public void Incluir(Pessoa pessoa)
 		{
 			_context.Pessoas.Add(pessoa);
 			_context.SaveChanges();
+			_context.Dispose();
 		}
-		
+
+		public IEnumerable<Pessoa> Consultar()
+		{
+			var getPessoas = _context.Pessoas.DefaultIfEmpty();
+			return getPessoas;
+		}
 	}
 }

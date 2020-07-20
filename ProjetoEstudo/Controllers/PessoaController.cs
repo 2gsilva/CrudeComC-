@@ -1,32 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using ProjetoEstudo.Context;
 using ProjetoEstudo.Dao;
 using ProjetoEstudo.Models;
+using System.Collections.Generic;
 
 namespace ProjetoEstudo.Controllers
 {
 	public class PessoaController : Controller
 	{
-		private EstudoContext _context;
+		private readonly EstudoContext _context;
 
 		public PessoaController(EstudoContext context) 
 		{
 			_context = context;
 		}
-		
-		//[HttpPost]
-		public IActionResult PessoaView(Pessoa pessoa)
+				
+		public IActionResult CadPessoa()
 		{
-						
-			PessoaDao pessoaDao = new PessoaDao(_context);
-
-			pessoaDao.incluir(pessoa);
-
 			return View();
 		}
+
+		[HttpPost]
+		public IActionResult Inserir(Pessoa pessoa)
+		{ 
+		
+		PessoaDao pessoaDao = new PessoaDao(_context);
+		pessoaDao.Incluir(pessoa);
+			
+			return RedirectToAction(nameof(CadPessoa));
+		}
+
+		[HttpGet]
+		public IActionResult ConsPessoa()
+		{
+			IEnumerable<Pessoa> getPessoas = new PessoaDao(_context).Consultar();
+
+			return View(getPessoas);
+		}
+
 	}
 }

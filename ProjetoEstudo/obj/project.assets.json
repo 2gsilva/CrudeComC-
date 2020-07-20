@@ -5006,11 +5006,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Guilherme\\source\\repos\\ProjetoEstudo\\ProjetoEstudo\\ProjetoEstudo.csproj",
+      "projectUniqueName": "C:\\SistemasGitHub\\CrudeComCSharp\\ProjetoEstudo\\ProjetoEstudo.csproj",
       "projectName": "ProjetoEstudo",
-      "projectPath": "C:\\Users\\Guilherme\\source\\repos\\ProjetoEstudo\\ProjetoEstudo\\ProjetoEstudo.csproj",
+      "projectPath": "C:\\SistemasGitHub\\CrudeComCSharp\\ProjetoEstudo\\ProjetoEstudo.csproj",
       "packagesPath": "C:\\Users\\Guilherme\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Guilherme\\source\\repos\\ProjetoEstudo\\ProjetoEstudo\\obj\\",
+      "outputPath": "C:\\SistemasGitHub\\CrudeComCSharp\\ProjetoEstudo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Guilherme\\AppData\\Roaming\\NuGet\\NuGet.Config",
