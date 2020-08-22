@@ -1,23 +1,37 @@
 ﻿@using ProjetoEstudo.Models
-@model IEnumerable<Pessoa> 
+@model IEnumerable<Pessoa>
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-   <text align="center"> 
+<text align="center">
     <h2>Relação de pessoas </h2>
-   </text>
+</text>
 <br>
 
-@foreach (var pessoa in Model)
- {
-    
-<p>
-    <hr>
-   <b>Nome:</b> @pessoa.Nome @pessoa.Sobrenome <br>
-   <b>Data de Nascimento:</b> @pessoa.DataNasc<br>
-</p>
-    
- }
- 
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Sobrenome</th>
+            <th scope="col">Data de Nascimento</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var pessoa in Model)
+         {
+            
+            <tr>
+                <td>@pessoa.Nome</td>
+                <td>@pessoa.Sobrenome</td>
+                <td>@pessoa.DataNasc</td>
+                <td> <a href="~/Pessoa/Excluir/@pessoa.Id">Excluir</a> </td>
+            </tr>
+
+         }
+    </tbody>
+</table>
+

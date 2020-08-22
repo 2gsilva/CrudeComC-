@@ -19,8 +19,7 @@
             @Html.LabelFor(model => Model.Nome, htmlAttributes: new { @class = "control-label col-md-2" })
 
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
-
+                <input type="text" class="form-control" name="Nome"  placeholder="Seu nome" required>
             </div>
         </div>
 
@@ -28,7 +27,7 @@
             @Html.LabelFor(model => Model.Sobrenome, htmlAttributes: new { @class = "control-label col-md-2" })
 
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Sobrenome, new { htmlAttributes = new { @class = "form-control" } })
+                <input type="text" class="form-control" name="Sobrenome" placeholder="Seu sobrenome" required>
             </div>
         </div>
 

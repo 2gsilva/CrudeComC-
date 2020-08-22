@@ -24,10 +24,18 @@ namespace ProjetoEstudo.Controllers
 		public IActionResult Inserir(Pessoa pessoa)
 		{ 
 		
-		PessoaDao pessoaDao = new PessoaDao(_context);
-		pessoaDao.Incluir(pessoa);
+			PessoaDao pessoaDao = new PessoaDao(_context);
+			pessoaDao.Incluir(pessoa);
 			
 			return RedirectToAction(nameof(CadPessoa));
+		}
+
+		public IActionResult Excluir(int id)
+		{
+			PessoaDao pessoaDao = new PessoaDao(_context);
+			pessoaDao.Excluir(id);
+
+			return RedirectToAction(nameof(ConsPessoa));
 		}
 
 		[HttpGet]

@@ -18,15 +18,54 @@ namespace ProjetoEstudo.Dao
 
 		public void Incluir(Pessoa pessoa)
 		{
-			_context.Pessoas.Add(pessoa);
-			_context.SaveChanges();
-			_context.Dispose();
+			try
+			{
+				_context.Pessoas.Add(pessoa);
+				_context.SaveChanges();
+			}
+			catch (Exception ex) 
+			{
+				ex.GetType();
+				Console.WriteLine( ex.Message);
+			}
+			finally
+			{
+				_context.Dispose();
+			}
+		}
+
+		public void Excluir(int id)
+		{
+			try
+			{
+				_context.Remove(_context.Pessoas.Single(p => p.Id == id));
+				_context.SaveChanges();
+			}
+			catch (Exception ex)
+			{
+				ex.GetType();
+				Console.WriteLine(ex.Message);
+			}
+			finally
+			{
+				_context.Dispose();
+			}
 		}
 
 		public IEnumerable<Pessoa> Consultar()
-		{
-			var getPessoas = _context.Pessoas.DefaultIfEmpty();
-			return getPessoas;
+		{			
+			IEnumerable<Pessoa> getPessoas = null;
+			try
+			{
+				getPessoas = _context.Pessoas.DefaultIfEmpty();
+				return getPessoas;
+			}
+			catch(Exception ex)
+			{
+				ex.GetType();
+				Console.WriteLine(ex.Message);
+			}
+			return getPessoas;			
 		}
 	}
 }
