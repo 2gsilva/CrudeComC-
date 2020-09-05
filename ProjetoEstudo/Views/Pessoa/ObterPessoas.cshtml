@@ -2,6 +2,10 @@
 @model IEnumerable<Pessoa>
 
 @{
+    ViewData["Title"] = "Consultar Pessoa";
+}
+
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -16,14 +20,13 @@
             <th scope="col">Nome</th>
             <th scope="col">Sobrenome</th>
             <th scope="col">Data de Nascimento</th>
-
         </tr>
     </thead>
     <tbody>
 
         @foreach (var pessoa in Model)
-         {
-            
+        {
+
             <tr>
                 <td>@pessoa.Nome</td>
                 <td>@pessoa.Sobrenome</td>
@@ -31,7 +34,7 @@
                 <td> <a href="~/Pessoa/Excluir/@pessoa.Id">Excluir</a> </td>
             </tr>
 
-         }
+        }
     </tbody>
 </table>
 

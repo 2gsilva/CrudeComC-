@@ -52,7 +52,26 @@ namespace ProjetoEstudo.Dao
 			}
 		}
 
-		public IEnumerable<Pessoa> Consultar()
+		public Pessoa Consultar(String nome, String sobrenome)
+		{
+			try
+			{
+				var _pessoa = _context.Pessoas.Where(p => p.Nome == nome && p.Sobrenome == sobrenome).FirstOrDefault();
+				return _pessoa;
+			}
+			catch (NullReferenceException ex)
+			{
+				ex.GetType();
+				return null;
+			}
+			catch (Exception ex)
+			{
+				ex.GetType();
+				return null;
+			}
+		}
+		
+		public IEnumerable<Pessoa> Obter()
 		{			
 			IEnumerable<Pessoa> getPessoas = null;
 			try
@@ -63,9 +82,8 @@ namespace ProjetoEstudo.Dao
 			catch(Exception ex)
 			{
 				ex.GetType();
-				Console.WriteLine(ex.Message);
-			}
-			return getPessoas;			
+				return null;
+			}			
 		}
 	}
 }

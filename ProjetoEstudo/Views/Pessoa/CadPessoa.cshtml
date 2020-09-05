@@ -1,12 +1,16 @@
 ﻿@model ProjetoEstudo.Models.Pessoa
 
 @{
+    ViewData["Title"] = "Cadastro de Pessoa";
+}
+
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-    <div class="text-center">
-        <h2> Cadastro  de Pessoa</h2>
-    </div>
+<div class="text-center">
+    <h2> Cadastro  de Pessoa</h2>
+</div>
 
 @using (Html.BeginForm())
 {
@@ -19,7 +23,7 @@
             @Html.LabelFor(model => Model.Nome, htmlAttributes: new { @class = "control-label col-md-2" })
 
             <div class="col-md-10">
-                <input type="text" class="form-control" name="Nome"  placeholder="Seu nome" required>
+                <input type="text" class="form-control" name="Nome" placeholder="Seu nome" required>
             </div>
         </div>
 
@@ -46,6 +50,16 @@
             </div>
         </div>
 
+        @switch (ViewData["Mensagem"])
+        {
+            case "Sucesso":
+                <div class="alert alert-primary" role="alert"> <div class="text-center"><h6>Cadastro realizado com sucesso!</h6></div></div> ;
+                break;
+            case "Falha":
+                <div class="alert alert-danger" role="alert"> <div class="text-center"><h6>O usuário já existe!</h6></div></div>;
+                break;
+        }
+
     </div>
 
- }
+}

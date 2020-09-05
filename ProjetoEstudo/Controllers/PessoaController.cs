@@ -23,11 +23,20 @@ namespace ProjetoEstudo.Controllers
 		[HttpPost]
 		public IActionResult Inserir(Pessoa pessoa)
 		{ 
-		
 			PessoaDao pessoaDao = new PessoaDao(_context);
-			pessoaDao.Incluir(pessoa);
-			
-			return RedirectToAction(nameof(CadPessoa));
+			var _pessoa = pessoaDao.Consultar(pessoa.Nome, pessoa.Sobrenome);
+
+			if (_pessoa != null)
+			{
+				ViewData["Mensagem"] = "Falha";
+				return View("Views/Pessoa/CadPessoa.cshtml");
+			}
+			else
+			{
+				ViewData["Mensagem"] = "Sucesso";
+				pessoaDao.Incluir(pessoa);
+				return View("Views/Pessoa/CadPessoa.cshtml");
+			}
 		}
 
 		public IActionResult Excluir(int id)
@@ -35,15 +44,22 @@ namespace ProjetoEstudo.Controllers
 			PessoaDao pessoaDao = new PessoaDao(_context);
 			pessoaDao.Excluir(id);
 
-			return RedirectToAction(nameof(ConsPessoa));
+			return RedirectToAction(nameof(ObterPessoas));
 		}
 
 		[HttpGet]
-		public IActionResult ConsPessoa()
+		public IActionResult ObterPessoas()
 		{
-			IEnumerable<Pessoa> getPessoas = new PessoaDao(_context).Consultar();
-
+			IEnumerable<Pessoa> getPessoas = new PessoaDao(_context).Obter();
+			if (getPessoas == null)
+			{
+				ViewBag["Mensagem"] = "Não foram encontrados registros";
+				return ViewBag["Mensagem"];
+			}
+			else
+			{ 
 			return View(getPessoas);
+			}
 		}
 
 	}

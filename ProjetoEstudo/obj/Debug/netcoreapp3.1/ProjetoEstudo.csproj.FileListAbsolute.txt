@@ -208,4 +208,4 @@ C:\SistemasGitHub\CrudeComCSharp\ProjetoEstudo\obj\Debug\netcoreapp3.1\staticweb
 C:\SistemasGitHub\CrudeComCSharp\ProjetoEstudo\obj\Debug\netcoreapp3.1\ProjetoEstudo.dll
 C:\SistemasGitHub\CrudeComCSharp\ProjetoEstudo\obj\Debug\netcoreapp3.1\ProjetoEstudo.pdb
 C:\SistemasGitHub\CrudeComCSharp\ProjetoEstudo\obj\Debug\netcoreapp3.1\ProjetoEstudo.genruntimeconfig.cache
-C:\SistemasGitHub\CrudeComCSharp\ProjetoEstudo\obj\Debug\netcoreapp3.1\Razor\Views\Pessoa\ConsPessoa.cshtml.g.cs
+C:\SistemasGitHub\CrudeComCSharp\ProjetoEstudo\obj\Debug\netcoreapp3.1\Razor\Views\Pessoa\ObterPessoas.cshtml.g.cs
