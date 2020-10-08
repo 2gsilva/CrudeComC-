@@ -26,15 +26,16 @@
 
         @foreach (var pessoa in Model)
         {
-
+  
             <tr>
                 <td>@pessoa.Nome</td>
                 <td>@pessoa.Sobrenome</td>
                 <td>@pessoa.DataNasc</td>
                 <td> <a href="~/Pessoa/Excluir/@pessoa.Id">Excluir</a> </td>
             </tr>
-
+  
         }
     </tbody>
+    
 </table>
 

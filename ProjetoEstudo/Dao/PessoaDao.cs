@@ -26,7 +26,7 @@ namespace ProjetoEstudo.Dao
 			catch (Exception ex) 
 			{
 				ex.GetType();
-				Console.WriteLine( ex.Message);
+				Util util = new Util(ex.Message, true);
 			}
 			finally
 			{
